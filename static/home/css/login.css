@@ -1,0 +1,68 @@
+form {
+    width: 80%;
+    margin: 1rem auto;
+}
+
+form h2 {
+    color: skyblue;
+    font-size: .36rem;
+    margin-bottom: .5rem;
+}
+
+form h2 a {
+    color: skyblue;
+    font-size: .36rem;
+    margin-bottom: .5rem;
+}
+
+form .row {
+    width: 100%;
+    margin: .2rem auto;
+    padding: .2rem 0 .4rem 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+form .row label {
+    width: 25%;
+    display: inline-block;
+    float: left;
+    vertical-align: middle;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+form .row input {
+    width: 70%;
+    margin-left: 5%;
+    float: left;
+    border-bottom: .01rem solid skyblue;
+    padding-bottom: .2rem;
+    color: skyblue;
+}
+
+form .row .col {
+    width: 2rem;
+    height: .7rem;
+    border-radius: .2rem;
+    text-align: center;
+    line-height: .7rem;
+    color: #FFF;
+    background: skyblue;
+    box-shadow: 0 0 .05rem rgb(0, 0, 0, .5);
+}
+
+form .row img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: .01rem solid skyblue;
+}
+
+form .tips {
+    color: red;
+    font-size: .16rem;
+    text-align: center;
+    width: 100%;
+}

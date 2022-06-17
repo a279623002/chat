@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: .32rem;
+    outline: none;
+  	background: #FFF;
+}
+
+input {
+    border: none;
+    outline: none;
+}

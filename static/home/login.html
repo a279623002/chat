@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <form action="">
+        <h2><a href="javascript:history.go(-1);">&lt; &nbsp;Welcome to login</a></h2>
+        <div class="row">
+            <label for="userName">用户名</label>
+            <input type="text" id="userName">
+        </div>
+        <div class="row">
+            <label for="password">密码</label>
+            <input type="password" id="password">
+        </div>
+        <div class="row">
+            <div class="col">注册</div>
+            <div class="col">登录</div>
+        </div>
+    </form>
+
+    <script src="./js/font.js"></script>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script>
+        $(function () {
+            $('.row:last .col:first').on('click', function () {
+                window.location.href = './register.html';
+            });
+            $('.row:last .col:last').on('click', function () {
+                window.location.href = './index.html';
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chat room</title>
+    <link rel="stylesheet" href="./css/public.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <main>
+        <div class="msg">
+            <img src="./images/dog.jpg" class="head">
+            <div class="msg_box">
+                <div class="msg_top">siro <span>2019:08:09</span></div>
+                <div class="msg_bottom">
+                    <i></i>
+                    <div class="msg_content">1</div>
+                </div>
+            </div>
+        </div>
+        <div class="msg">
+            <img src="./images/dog.jpg" class="head">
+            <div class="msg_box">
+                <div class="msg_top">siro</div>
+                <div class="msg_bottom">
+                    <i></i>
+                    <div class="msg_content">2333</div>
+                </div>
+            </div>
+        </div>
+        <div class="msg msg_self">
+            <img src="./images/dog.jpg" class="head">
+            <div class="msg_box">
+                <div class="msg_top"><span>2019:08:09</span> siro</div>
+                <div class="msg_bottom">
+                    <i></i>
+                    <div class="msg_content">2</div>
+                </div>
+            </div>
+        </div>
+        <div class="msg">
+            <img src="./images/dog.jpg" class="head">
+            <div class="msg_box">
+                <div class="msg_top">siro</div>
+                <div class="msg_bottom">
+                    <i></i>
+                    <div class="msg_content">2333</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <form action="#">
+            <div contenteditable="true" id="content">编辑文本</div>
+            <button>发送</button>
+        </form>
+    </footer>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/font.js"></script>
+    <script>
+        $(function () {
+            $('.msg_self').on('click', function () {
+                window.location.href = './edit.html';
+            });
+        })
+    </script>
+</body>
+
+</html>

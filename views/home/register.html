@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Regist</title>
+    <link rel="stylesheet" href="/static/home/css/public.css">
+    <link rel="stylesheet" href="/static/home/css/login.css">
+</head>
+
+<body>
+    <form action="" id="myform" enctype="multipart/form-data">
+        <input id="file" type="file" name="headimgurl" onchange="c()" style="display: none;" />
+        <h2><a href="javascript:history.go(-1);">&lt; &nbsp;Welcome to register</a></h2>
+        <div class="row">
+            <img id="head" src="/static/home/images/dog.jpg">
+        </div>
+        <div class="tips">默认头像，点击可修改</div>
+        <div class="row">
+            <label for="userName">用户名</label>
+            <input type="text" id="userName" name="username">
+        </div>
+        <div class="row">
+            <label for="password">密码</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div class="row">
+            <label for="password_c">确认密码</label>
+            <input type="password" id="password_c" name="password_c">
+        </div>
+        <div class="row">
+            <div class="col">登录</div>
+            <div class="col">注册</div>
+        </div>
+    </form>
+
+    <script src="/static/home/js/font.js"></script>
+    <script src="/static/home/js/jquery-3.1.1.min.js"></script>
+    <script>
+        function c() {
+            var r = new FileReader();
+            f = document.getElementById('file').files[0];
+            r.readAsDataURL(f);
+            r.onload = function (e) {
+                document.getElementById('head').src = this.result;
+            };
+        }
+        $(function () {
+            $('.row:last .col:first').on('click', function () {
+                window.location.href = 'login';
+            });
+            $('input').keypress(function(e) {
+                if (e.which == 13) {
+                    register();
+                }
+            });
+            $('.row:last .col:last').on('click', function () {
+                register();
+            });
+            $('#head').on('click', function () {
+                $('#file').click();
+            });
+        })
+        function register() {
+			var formData = new FormData(document.getElementById("myform"));//表单id
+			$.ajax({
+				url: 'register',
+				type: 'post',
+				dataType: 'json',
+				data: formData,
+				async: false,
+				cache: false,
+				contentType: false,
+				processData: false,
+				success: function (data) {
+					if (data.state) {
+						alert(data.msg);
+						window.location.href = "login";
+					} else {
+						alert(data.msg);
+					}
+				}
+			});
+		}
+    </script>
+</body>
+
+</html>

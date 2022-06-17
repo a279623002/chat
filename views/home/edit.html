@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit</title>
+    <link rel="stylesheet" href="/static/home/css/public.css">
+    <link rel="stylesheet" href="/static/home/css/login.css">
+</head>
+
+<body>
+    <form action="" id="myform" enctype="multipart/form-data">
+        <input id="file" type="file" name="headimgurl" onchange="c()" style="display: none;"/>
+        <h2><a href="javascript:history.go(-1);">&lt; &nbsp;Editing</a></h2>
+        <div class="row">
+            <img id="head" src="{{if .user.Headimgurl}}{{.user.Headimgurl}}{{else}}/static/home/images/dog.jpg{{end}}">
+        </div>
+        <div class="row">
+            <label for="userName">用户名</label>
+            <input type="text" id="userName" value="{{.user.Name}}" readonly>
+        </div>
+        <div class="row">
+            <label for="password">密码</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div class="row">
+            <label for="password_c">确认密码</label>
+            <input type="password" id="password_c" name="password_c">
+        </div>
+        <div class="row">
+            <div class="col">修改</div>
+        </div>
+    </form>
+
+    <script src="/static/home/js/font.js"></script>
+    <script src="/static/home/js/jquery-3.1.1.min.js"></script>
+    <script>
+        function c() {
+            var r = new FileReader();
+            f = document.getElementById('file').files[0];
+            r.readAsDataURL(f);
+            r.onload = function (e) {
+                document.getElementById('head').src = this.result;
+            };
+        }
+        $(function () {
+            $('#head').on('click', function () {
+                $('#file').click();
+            });
+            $('input').keypress(function(e) {
+                if (e.which == 13) {
+                    edit();
+                }
+            });
+            $('.row:last .col').on('click', function () {
+                edit();
+            });
+        })
+        function edit() {
+			var formData = new FormData(document.getElementById("myform"));//表单id
+			$.ajax({
+				url: 'edit',
+				type: 'post',
+				dataType: 'json',
+				data: formData,
+				async: false,
+				cache: false,
+				contentType: false,
+				processData: false,
+				success: function (data) {
+					if (data.state) {
+						alert(data.msg);
+						window.location.href = "/";
+					} else {
+						alert(data.msg);
+					}
+				}
+			});
+		}
+    </script>
+</body>
+
+</html>

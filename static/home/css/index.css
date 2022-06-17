@@ -1,0 +1,151 @@
+header {
+   	overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #FFF;
+    z-index: 9;
+    left: 0;
+}
+
+header a {
+    width: .5rem;
+    height: .5rem;
+    display: block;
+    float: right;
+    margin: .2rem;
+    background: url(../images/close.png) no-repeat center center;
+    background-size: contain;
+}
+
+main {
+    margin: 1rem auto 2rem auto;
+    padding: 0 .5rem .5rem .5rem;
+}
+
+main .join {
+    font-size: .28rem;
+    color: gray;
+    text-align: center;
+    margin: .5rem auto;
+}
+
+main .msg {
+    overflow: hidden;
+    margin-bottom: .2rem;
+}
+
+main .msg img.head {
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    float: left;
+    border-radius: 50%;
+  	object-fit: cover;
+}
+
+main .msg .msg_box {
+    float: left;
+    width: calc(100% - 1rem);
+}
+
+main .msg .msg_box .msg_top {
+    margin-left: .3rem;
+    color: gray;
+}
+
+main .msg .msg_box .msg_top span {
+    font-size: .22rem;
+    color: #e5e5e5;
+    display: inline-block;
+    margin: auto .2rem;
+}
+
+main .msg .msg_box .msg_bottom {
+    width: 100%;
+    overflow: hidden;
+}
+
+main .msg .msg_box .msg_bottom i {
+    float: left;
+    width: 0;
+    height: 0;
+    margin: .15rem 0 0 0;
+    border-width: .15rem;
+    border-style: solid;
+    border-color: transparent skyblue transparent transparent;
+}
+
+main .msg .msg_box .msg_bottom .msg_content {
+    float: left;
+    background: skyblue;
+    max-width: calc(100% - .6rem);
+    border-radius: .1rem;
+    padding: .1rem .15rem;
+    display: inline-block;
+    word-wrap: break-word;
+    color: #FFF;
+}
+
+main .msg_self img.head {
+    float: right;
+}
+
+main .msg_self .msg_box {
+    float: right;
+    text-align: right;
+}
+
+main .msg_self .msg_box .msg_top {
+    margin-right: .3rem;
+}
+
+main .msg_self .msg_box .msg_bottom i {
+    float: right;
+    border-color: transparent transparent transparent #000;
+}
+
+main .msg_self .msg_box .msg_bottom .msg_content {
+    float: right;
+    background: #000;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #FFF;
+}
+
+footer form {
+    width: 100%;
+    margin: .2rem auto;
+    overflow: hidden;
+}
+
+footer form #content {
+    display: inline-block;
+    width: 60%;
+    float: left;
+    margin-left: 5%;
+    border: .05rem skyblue solid;
+    border-radius: .1rem;
+    padding: .15rem;
+    word-break: break-all;
+    outline: none;
+    max-height: 1rem;
+    overflow-y: auto;
+}
+
+footer form button {
+    display: inline-block;
+    width: 20%;
+    float: left;
+    margin-left: 5%;
+    color: #FFF;
+    background: skyblue;
+    border-radius: .1rem;
+    border: none;
+    padding: .2rem 0;
+}
